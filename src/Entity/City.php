@@ -19,6 +19,7 @@ class City
      */
     private $id;
 
+
     /**
      * @ORM\ManyToOne(targetEntity=Department::class, inversedBy="cities")
      */
