@@ -10,7 +10,15 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=FoodProductRepository::class)
- * @ApiResource()
+ * @ApiResource(
+ *     collectionOperations={
+            "get_food_products"={
+ *              "route_name"="food_products_list",
+ *              "method"="GET",
+ *              "controller"=FoodProductController::class
+ *          }
+ *     }
+ * )
  */
 class FoodProduct
 {
