@@ -15,14 +15,21 @@ use Doctrine\ORM\Mapping as ORM;
             "get_cities"={
  *              "path"="cities_list",
  *              "method"="GET",
- *              "controller"="App\Controller\LocationController::class"
+ *              "controller"="App\Controller\LocationController",
  *          }
  *     },
  *     itemOperations={
+ *          "get","put","delete","patch",
  *          "get_city"={
                 "method"="GET",
  *              "path"="city_detail",
- *              "controller"="App\Controller\LocationController::class"
+ *              "controller"="App\Controller\LocationController",
+ *          },
+ *          "city_view"={
+                "method"="GET",
+ *              "path"="/city/view/{id}",
+ *              "controller"="App\Controller\LocationController",
+ *
  *          }
  *     }
  * )

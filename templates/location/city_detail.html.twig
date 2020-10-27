@@ -6,6 +6,8 @@
 
     <h1>City Détail</h1>
 
-     <p>{{ city.name }}</p>
+    <p>Ville: {{ city.name }}</p>
+    <p>Latitude: {{ city.gpsLat }} -- Longitude: {{ city.gpsLng }}</p>
+    <p>Region : {{ city.departmentCode.name }}</p>
 
 {% endblock %}

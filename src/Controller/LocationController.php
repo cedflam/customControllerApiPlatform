@@ -7,17 +7,9 @@ use App\Repository\CityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\SerializerInterface;
 
 class LocationController extends AbstractController
 {
-
-    private $serializer;
-
-    public function __construct(SerializerInterface $serializer)
-    {
-        $this->serializer = $serializer;
-    }
 
     /**
      * @Route(
@@ -30,10 +22,8 @@ class LocationController extends AbstractController
      */
     public function getCities(CityRepository $cityRepository)
     {
-        $cities = $cityRepository->findAll();
-
         return $this->render('location/index.html.twig', [
-            "cities" => $cities
+            "cities" => $cityRepository->findAll()
         ]);
     }
 
@@ -53,5 +43,15 @@ class LocationController extends AbstractController
         return $this->render("location/city_detail.html.twig", [
             "city" => $city
         ]);
+    }
+
+    /**
+     * Permet d'effectuer des opérations sur un objet de l'api
+     * @param City $data
+     * @return City
+     */
+    public function __invoke(City $data): City
+    {
+        dd($data);
     }
 }
