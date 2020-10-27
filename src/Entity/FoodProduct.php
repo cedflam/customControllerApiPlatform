@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
             "get_food_products"={
  *              "route_name"="food_products_list",
  *              "method"="GET",
- *              "controller"=FoodProductController::class
+ *              "controller"=FoodProductController::class,
  *          }
  *     }
  * )

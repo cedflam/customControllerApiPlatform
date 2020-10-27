@@ -9,14 +9,20 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=CityRepository::class)
  * @ApiResource(
+ *
  *     collectionOperations={
  *          "get",
             "get_cities"={
- *              "route_name"="cities_list",
+ *              "path"="cities_list",
  *              "method"="GET",
- *              "controller"=LocationController::class
- *
- *
+ *              "controller"="App\Controller\LocationController::class"
+ *          }
+ *     },
+ *     itemOperations={
+ *          "get_city"={
+                "method"="GET",
+ *              "path"="city_detail",
+ *              "controller"="App\Controller\LocationController::class"
  *          }
  *     }
  * )

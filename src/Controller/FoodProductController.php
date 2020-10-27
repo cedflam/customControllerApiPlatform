@@ -14,10 +14,9 @@ class FoodProductController extends AbstractController
     /**
      * @Route(path="/api/food-products/list", name="food_products_list", methods={"GET"})
      * @param FoodProductRepository $foodProductRepository
-     * @param SerializerInterface $serializer
      * @return Response
      */
-    public function index(FoodProductRepository $foodProductRepository, SerializerInterface $serializer): Response
+    public function index(FoodProductRepository $foodProductRepository): Response
     {
         $products = $foodProductRepository->findAll();
 
