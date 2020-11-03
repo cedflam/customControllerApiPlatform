@@ -19,17 +19,16 @@ use Doctrine\ORM\Mapping as ORM;
  *          }
  *     },
  *     itemOperations={
- *          "get","put","delete","patch",
+ *          "get",
  *          "get_city"={
-                "method"="GET",
  *              "path"="city_detail",
+                "method"="GET",
  *              "controller"="App\Controller\LocationController",
  *          },
  *          "city_view"={
-                "method"="GET",
  *              "path"="/city/view/{id}",
+                "method"="GET",
  *              "controller"="App\Controller\LocationController",
- *
  *          }
  *     }
  * )
